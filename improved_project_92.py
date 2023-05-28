@@ -3,9 +3,9 @@ def calculate_emi(p,no,ro):
     emi=p*(ro/100)*((1+ro/100)**no)/(((1+ro/100)**no)-1)
     return round(emi,3)
 st.title("Calculating EMI")
-principle = st.slider("Principle amount :", 0, 100000)
-tenure = st.slider("Tenure of the loan :", 0, 10)
-roi = st.slider("Rate of Interest :", 0.0, 100.0)
+principle = st.slider("Principle amount :", 1000, 100000)
+tenure = st.slider("Tenure of the loan :", 1,30)
+roi = st.slider("Rate of Interest :",1,15)
 n = tenure * 12
 r = roi / 12
 if st.button("Calculate"):
@@ -18,9 +18,9 @@ def calculate_outstanding_balance(p,n,r,m):
     return balance
 
 st.title("Improving EMI Calculation")
-principal = st.slider("New Principle amount :", 0, 500000)
-ntenure = st.slider("New Tenure of the loan :", 0, 10)
-nroi = st.slider("New Rate of Interest :", 0.0, 100.0)
+principal = st.slider("New Principle amount :", 1000,100000)
+ntenure = st.slider("New Tenure of the loan :", 1,30)
+nroi = st.slider("New Rate of Interest :", 1,15)
 m = st.slider("Period after which the Outstanding Loan Balance is calculated (in months)" , 1 ,12)
 new_n = ntenure * 12
 r_new = nroi / 12
