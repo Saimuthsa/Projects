@@ -56,7 +56,7 @@ rf_clf.fit(X_train, y_train)
 rf_clf_score = rf_clf.score(X_train, y_train)
 
 def prediction(model , island , bill_length_mm , bill_depth_mm , flipper_length_mm , body_mass_g , sex):
-	spec_predicted = model.predict(X)
+	spec_predicted = model.predict(bill_length_mm , bill_depth_mm , flipper_length_mm , body_mass_g , sex)
 	spec_predicted = spec_predicted[0]
 	if spec_predicted == 0:
 		return "Adelie"
