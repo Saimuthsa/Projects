@@ -55,6 +55,18 @@ rf_clf = RandomForestClassifier(n_jobs = -1)
 rf_clf.fit(X_train, y_train)
 rf_clf_score = rf_clf.score(X_train, y_train)
 
+if sex == "Male"
+    numeric_sex = 0
+else:
+	numeric_sex = 1
+
+if island == "Biscoe"
+    numeric_island = 0
+elif island == "Dream"
+	numeric_island = 1
+else:
+	numeric_island = 2
+	
 def prediction(model , island , bill_length_mm , bill_depth_mm , flipper_length_mm , body_mass_g , sex):
 	spec_predicted = model.predict(bill_length_mm , bill_depth_mm , flipper_length_mm , body_mass_g , sex)
 	spec_predicted = spec_predicted[0]
